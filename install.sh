@@ -39,7 +39,7 @@ function install_providers() {
   npm install --global neovim
 }
 
-install_dein() {
+function install_dein() {
   curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > dein.sh
   sh ./dein.sh ~/.cache/dein
   rm -f dein.sh
