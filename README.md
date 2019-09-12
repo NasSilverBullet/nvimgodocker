@@ -1,11 +1,11 @@
-# vimgodocker
+# nvimgodocker
 
 in development ...
 
 ## How to develop installer
 
 ```sh
-vim installer.sh
+nvim installer.sh
 ```
 
 ## integration test
