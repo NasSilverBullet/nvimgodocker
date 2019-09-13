@@ -45,7 +45,28 @@ function install_dein() {
   rm -f dein.sh
 }
 
+function curl_nvim_config_files() {
+  mkdir ~/.config/nvim
+  cd ~/.confing/nvim
+
+  curl -L -O https://raw.githubusercontent.com/NasSilverBullet/nvimgodocker/nvim/init.vim
+
+  files='
+  dein
+  denite
+  deoplete
+  lightline
+  go_lazy
+  md_lazy
+  '
+
+  for file in ${files}; do
+    curl -L -O https://raw.githubusercontent.com/NasSilverBullet/dotfiles/master/.config/nvim/$file.toml
+  done
+}
+
 add_dependencies
 install_providers
 install_dein
+curl_nvim_config_files
 exit 0
