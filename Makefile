@@ -8,7 +8,7 @@ it: erase ## integration test
 	docker system df -v
 	docker-compose up -d --build
 	docker-compose exec app sh install.sh
-	docker-compose exec app sh
+	docker-compose exec app nvim
 
 .PHONY: erase
 erase: ## erase completely
