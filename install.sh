@@ -2,7 +2,9 @@
 
 function add_dependencies() {
   apk update
+
   apk upgrade
+
   apk add --no-cache \
 	git \
   curl \
@@ -33,9 +35,12 @@ function add_dependencies() {
 function install_providers() {
   pip install --upgrade pip
   pip install neovim
+
   pip3 install --upgrade pip3
   pip3 install neovim
+
   gem install neovim
+
   npm install --global neovim
 }
 
@@ -63,18 +68,20 @@ function curl_nvim_config_files() {
   for file in ${files}; do
     curl -L -O https://raw.githubusercontent.com/NasSilverBullet/dotfiles/master/.config/nvim/$file.toml
   done
+
 	cd -
 }
 
 function install_nvim_plugins() {
   nvim --headless -c "call dein#install()" -c "q"
+
   nvim --headless -c "GoInstallBinaries" -c "q"
+
   # nvim --headless -c "UpdateRemotePlugins" -c "q"
 	mkdir -p ~/.local/share/nvim
 	cd ~/.local/share/nvim
 	curl -L -O https://raw.githubusercontent.com/NasSilverBullet/nvimgodocker/master/nvim/rplugin.vim
 	cd -
-
 }
 
 add_dependencies
@@ -82,4 +89,8 @@ install_providers
 install_dein
 curl_nvim_config_files
 install_nvim_plugins
+echo "========================================="
+echo "all steps were completed successfully!!!!"
+echo "enjoy happiy hacking with nvim x vim-go!!"
+echo "========================================="
 exit 0
