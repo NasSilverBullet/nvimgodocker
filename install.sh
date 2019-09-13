@@ -5,31 +5,33 @@ function add_dependencies() {
 
   apk upgrade
 
-  apk add --no-cache \
-  git \
-  curl \
-  make \
-  gcc \
-  musl-dev \
-  musl \
-  linux-headers \
-  gcc \
-  g++ \
-  gfortran \
-  openblas-dev \
-  python2 \
-  python3 \
-  python-dev \
-  python3-dev \
-  py2-pip \
-  py3-pip \
-  ruby \
-  ruby-dev \
-  ruby-rdoc \
-  nodejs \
-  npm \
-  neovim \
+  packages='
+  g++
+  gcc
+  git
+  curl
+  make
+  musl
+  musl-dev
+  gfortran
+  openblas-dev
+  linux-headers
+  python2
+  py2-pip
+  python-dev
+  python3
+  py3-pip
+  python3-dev
+  ruby
+  ruby-dev
+  ruby-rdoc
+  npm
+  nodejs
+  neovim
   neovim-doc
+  '
+
+  apk add --no-cache $packages
 }
 
 function install_providers() {
@@ -50,7 +52,7 @@ function install_dein() {
   rm -f dein.sh
 }
 
-function curl_nvim_config_files() {
+function get_nvim_config_files() {
   mkdir -p ~/.config/nvim
   cd ~/.config/nvim
 
@@ -84,13 +86,17 @@ function install_nvim_plugins() {
   cd -
 }
 
+function echo_success_message() {
+  echo "========================================="
+  echo "all steps were completed successfully!!!!"
+  echo "enjoy happiy hacking with nvim x vim-go!!"
+  echo "========================================="
+}
+
 add_dependencies
 install_providers
 install_dein
-curl_nvim_config_files
+get_nvim_config_files
 install_nvim_plugins
-echo "========================================="
-echo "all steps were completed successfully!!!!"
-echo "enjoy happiy hacking with nvim x vim-go!!"
-echo "========================================="
+echo_success_message
 exit 0
