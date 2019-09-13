@@ -12,7 +12,7 @@ if dein#load_state('~/.cache/dein')
 
   " Let dein manage dein
   " Required:
-  call dein#add('/Users/yukihiro/.cache/dein/repos/github.com/Shougo/dein.vim')
+  call dein#add('~/.cache/dein/repos/github.com/Shougo/dein.vim')
   call dein#add('joshdick/onedark.vim', {'merged': -1})
 
 " Import:

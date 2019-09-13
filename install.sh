@@ -47,9 +47,9 @@ function install_dein() {
 
 function curl_nvim_config_files() {
   mkdir ~/.config/nvim
-  cd ~/.confing/nvim
+  cd ~/.config/nvim
 
-  curl -L -O https://raw.githubusercontent.com/NasSilverBullet/nvimgodocker/nvim/init.vim
+  curl -L -O https://raw.githubusercontent.com/NasSilverBullet/nvimgodocker/master/nvim/init.vim
 
   files='
   dein
@@ -63,10 +63,18 @@ function curl_nvim_config_files() {
   for file in ${files}; do
     curl -L -O https://raw.githubusercontent.com/NasSilverBullet/dotfiles/master/.config/nvim/$file.toml
   done
+	cd -
+}
+
+function install_nvim_plugins() {
+  nvim --headless -c "call dein#install()" -c "q"
+  nvim --headless -c "GoInstallBinaries" -c "q"
+  nvim --headless -c "UpdateRemotePlugins" -c "q"
 }
 
 add_dependencies
 install_providers
 install_dein
 curl_nvim_config_files
+install_nvim_plugins
 exit 0
