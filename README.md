@@ -1,13 +1,19 @@
 # nvimgodocker
 
-in development ...
+### This is the script building the Neovim x Go environment automatically on Alpine Linux
 
-## Environment
+## Target Environment
 
-- os : alpine3.9
-- go : 1.12
+- Linux : Alpine 3.9.0
+- Go : 1.12
 
-## How to use
+## Getting Started
+
+```sh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/NasSilverBullet/nvimgodocker/master/install.sh)"
+```
+
+## For Example
 
 ```sh
 docker-compose up -d --build
@@ -15,13 +21,17 @@ docker-compose exec app sh -c "$(curl -fsSL https://raw.githubusercontent.com/Na
 docker-compose exec app nvim
 ```
 
-## How to develop installer
+---
+
+## How to develop the installer
 
 ```sh
-nvim installer.sh
+nvim install.sh
 ```
 
-## integration test
+## How to run the integration test
+
 ```sh
 make it
 ```
+
