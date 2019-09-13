@@ -1,6 +1,6 @@
 "dein Scripts-----------------------------
 if &compatible
-  set nocompatible               " Be iMproved
+  set nocompatible
 endif
 
 " Required:
@@ -44,26 +44,28 @@ endif
 set encoding=utf-8
 set fileencodings=utf-8
 set fileformats=unix,dos,mac
-"
-set number             "show line number
+
+"several settings
+set number                                              "show line number
 set autoindent
 set smartindent
-set tabstop=2          "replace tab to 2 space
-set shiftwidth=2       "set 2 space on auto indent
-set softtabstop=0      "set 0 tab by keyboard
-set ttimeout "https://hori-ryota.com/blog/neovim-fix-input-broken-ttimeout/
-set ttimeoutlen=50 "become esc or ctrl-[ to be faster
-set clipboard=unnamed  "copy yanked value to clipboard
-set hls                "highlight searched words
+set tabstop=2                                           "replace tab to 2 space
+set shiftwidth=2                                        "set 2 space on auto indent
+set softtabstop=0                                       "set 0 tab by keyboard
+set ttimeout                                            "https://hori-ryota.com/blog/neovim-fix-input-broken-ttimeout/
+set ttimeoutlen=50                                      "become esc or ctrl-[ to be faster
+set clipboard=unnamed                                   "copy yanked value to clipboard
+set hls                                                 "highlight searched words
 filetype plugin on
 filetype indent on
-nmap <C-c><C-c> :nohlsearch<CR><C-c> "remove highlight
-nmap <C-[><C-[> :nohlsearch<CR><C-[> "remove highlight
-set hidden             "can chage buffer if you don't save yet
+nmap <C-c><C-c> :nohlsearch<CR><C-c>                    "remove highlight
+nmap <C-[><C-[> :nohlsearch<CR><C-[>                    "remove highlight
+set hidden                                              "can chage buffer if you don't save yet
 let mapleader = "\<Space>"
 autocmd ColorScheme * highlight Normal ctermbg=none
 autocmd ColorScheme * highlight LineNr ctermbg=none
 colorscheme onedark "atom!
+
 "disable arrow key
 map <Up> <Nop>
 map <Down> <Nop>
