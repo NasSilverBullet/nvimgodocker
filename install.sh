@@ -6,7 +6,7 @@ function add_dependencies() {
   apk upgrade
 
   apk add --no-cache \
-	git \
+  git \
   curl \
   make \
   gcc \
@@ -69,7 +69,7 @@ function curl_nvim_config_files() {
     curl -L -O https://raw.githubusercontent.com/NasSilverBullet/dotfiles/master/.config/nvim/$file.toml
   done
 
-	cd -
+  cd -
 }
 
 function install_nvim_plugins() {
@@ -78,10 +78,10 @@ function install_nvim_plugins() {
   nvim --headless -c "GoInstallBinaries" -c "q"
 
   # nvim --headless -c "UpdateRemotePlugins" -c "q"
-	mkdir -p ~/.local/share/nvim
-	cd ~/.local/share/nvim
-	curl -L -O https://raw.githubusercontent.com/NasSilverBullet/nvimgodocker/master/nvim/rplugin.vim
-	cd -
+  mkdir -p ~/.local/share/nvim
+  cd ~/.local/share/nvim
+  curl -L -O https://raw.githubusercontent.com/NasSilverBullet/nvimgodocker/master/nvim/rplugin.vim
+  cd -
 }
 
 add_dependencies
