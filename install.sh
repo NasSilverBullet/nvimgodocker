@@ -57,6 +57,7 @@ function get_nvim_config_files() {
   cd ~/.config/nvim
 
   curl -L -O https://raw.githubusercontent.com/NasSilverBullet/nvimgodocker/master/nvim/init.vim
+  curl -L -O https://raw.githubusercontent.com/NasSilverBullet/dotfiles/master/.config/nvim/config.vim
 
   files='
   dein
