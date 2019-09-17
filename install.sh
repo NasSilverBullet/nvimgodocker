@@ -1,6 +1,8 @@
 #!/bin/bash
 
 function add_dependencies() {
+  echo "@testing http://nl.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories
+
   apk update
 
   apk upgrade
@@ -29,6 +31,7 @@ function add_dependencies() {
   nodejs
   neovim
   neovim-doc
+  ripgrep@testing
   '
 
   apk add --no-cache $packages
