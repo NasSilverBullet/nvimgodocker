@@ -1,7 +1,7 @@
 FROM golang:1.12-alpine3.9 as build
 
 RUN apk update && apk upgrade && \
-    apk add --no-cache git
+    apk add --no-cache git curl
 
 WORKDIR /go/src/github.com/NasSilverBullet/nvimgodocker
 
