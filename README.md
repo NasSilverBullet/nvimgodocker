@@ -1,6 +1,6 @@
 # nvimgodocker
 
-### This is the script building the Neovim x Go environment automatically on Alpine Linux
+### This is the script building the Neovim x Go environment automatically on Alpine Linux Container
 
 ## Target Environment
 
