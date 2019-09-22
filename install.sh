@@ -83,7 +83,7 @@ function install_nvim_plugins() {
 
   nvim --headless -c "GoInstallBinaries" -c "q"
 
-  # nvim --headless -c "UpdateRemotePlugins" -c "q"
+  #on behalf of  nvim --headless -c "UpdateRemotePlugins" -c "q"
   mkdir -p ~/.local/share/nvim
   cd ~/.local/share/nvim
   curl -L -O https://raw.githubusercontent.com/NasSilverBullet/nvimgodocker/master/nvim/rplugin.vim
