@@ -21,7 +21,7 @@ docker-compose exec app sh -c "$(curl -fsSL https://raw.githubusercontent.com/Na
 docker-compose exec app nvim
 ```
 
-### or
+### Or
 
 ```sh
 echo 'RUN sh -c "$(curl -fsSL https://raw.githubusercontent.com/NasSilverBullet/nvimgodocker/master/install.sh)"' >> Dockerfile
