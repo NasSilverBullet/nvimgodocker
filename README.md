@@ -42,3 +42,4 @@ nvim install.sh
 ```sh
 make it
 ```
+
