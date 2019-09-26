@@ -2,6 +2,7 @@
 
 function add_dependencies() {
   echo "@testing http://nl.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories
+  echo "@edgecommunity http://nl.alpinelinux.org/alpine/edge/community" >> /etc/apk/repositories
 
   apk update
 
@@ -29,8 +30,8 @@ function add_dependencies() {
   ruby-rdoc
   npm
   nodejs
-  neovim
-  neovim-doc
+  neovim@edgecommunity
+  neovim-doc@edgecommunity
   ripgrep@testing
   '
 
